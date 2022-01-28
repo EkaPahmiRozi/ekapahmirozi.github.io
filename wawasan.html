@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JQuery Link -->
+    <script type="text/javascript" src="asset/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="asset/jquery-ui.js"></script>
+    <link rel="stylesheet" href="asset/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <title>UAS DESAIN WEB</title>
+    <style type="text/css">
+            #feedback { font-size:1.4em; }
+            #pilih .ui-selecting { background:#FECA40; }
+            #pilih .ui-selected { background:#F39814;color:white; }
+            #pilih {list-style-type:none; margin:0; padding:0; width:60%;}
+            #pilih li {margin:3px; padding:0,4em; font-size:1,4em; height:18px;}
+    </style>
+    <script type="text/javascript">
+        $(function(){
+                $("#pilih").selectable();
+        });
+        $(function () {
+            $("#dialogku").dialog({
+                autoOpen: false,
+                show: 'blind',
+                hide: 'explode',
+                width: 'auto'
+            });
+            $('#dibuka').click(function () {
+                $('#dialogku').dialog('open');
+                return false;
+            });
+            $("#panels_map").dialog({
+                autoOpen: false,
+                show: 'blind',
+                hide: 'explode',
+                width: 'auto'
+            });
+            $('#map').click(function () {
+                $('#panels_map').dialog('open');
+                return false;
+            });
+
+            $("#hotel1").dialog({
+                autoOpen: false,
+                show: 'blind',
+                hide: 'explode',
+                width: 'auto'
+            });
+            $('#btn_hotel').click(function () {
+                $('#hotel1').dialog('open');
+                return false;
+            });
+            $("#hotel2").dialog({
+                autoOpen: false,
+                show: 'blind',
+                hide: 'explode',
+                width: 'auto'
+            });
+            $('#btn_hotel2').click(function () {
+                $('#hotel2').dialog('open');
+                return false;
+            });
+            $("#hotel3").dialog({
+                autoOpen: false,
+                show: 'blind',
+                hide: 'explode',
+                width: 'auto'
+            });
+            $('#btn_hotel3').click(function () {
+                $('#hotel3').dialog('open');
+                return false;
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $(".panel").slideToggle("slow");
+            });
+
+            $("#btn1").click(function () {
+                $(".panel1").slideToggle("slow");
+            });
+
+            $("#btn2").click(function () {
+                $(".panel2").slideToggle("slow");
+            });
+        });
+        
+        $(function(){
+            $("#accordion").accordion();
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark main-nav" style="background-color: #003566;">
+            <div class="container py-2">
+                <a class="navbar-brand" href="#">
+                    <img src="image/lombo.jpg" alt="" width="40" height="34" class="d-inline-block align-text-top">
+                    <strong>Lombok Timur</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="objekwisata.html">Objek Wisata</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sarana.html">Sarana Akomodasi</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="galeri.html">Galeri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wawasan.html">Wawasan</a>
+                        </li>
+                        <form class="d-flex">
+                            <input class="form-control me-3" type="search" placeholder="Pencarian" aria-label="Search">
+                            <button class="btn btn-success" type="submit">Cari</button>
+                        </form>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- carousel -->
+    <section>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="image/sembalun1.jpg" class="d-block w-100 img-thumbnail" alt="..." width="100%"
+                        height="500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="disply-2">Objek Wisata Sembalun </h2>
+                        <br>
+                        <p>Surga kecil dengan Keindahan alam yang sangat mempesona</p>
+                        <button type="button" class="btn btn-success btn-lg" id="map">Jelajahi</button>
+                        <button type="button" class="btn btn-warning btn-lg" id="dibuka">Video</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/strowberi.jpg" class="d-block w-100 img-thumbnail" alt="..." width="100%"
+                        height="500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Kebun Strowberi Sembalun</h2>
+                        <br>
+                        <p>yang bisa memanjakan mata saking merah mempesonanya </p>
+                        <button type="button" class="btn btn-success btn-lg" id="map">Jelajahi</button>
+                        <button type="button" class="btn btn-warning btn-lg" id="dibuka">Video</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/taman2.jpg" class="d-block w-100 img-thumbnail " alt="..." width="100%"
+                        height="500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Taman Wisata Pucuk Sembalun</h2>
+                        <br>
+                        <p>Dengan udara dan kehijauannya bisa menyentuh hati</p>
+
+                        <button type="button" class="btn btn-success btn-lg" id="map">Jelajahi</button>
+                        <button type="button" class="btn btn-warning btn-lg" id="dibuka">Video</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <div id="dialogku">
+        <h3>Video Sembalun</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JCMLQgjo2xw" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+    <div id="panels_map">
+        <h3>Google Maps Location</h3>
+        <iframe width="auto" height="315"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126321.49372848004!2d116.4216818662366!3d-8.347757300625888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc2c383dee1735%3A0xa2512900bb4a9b4e!2sSembalun%2C%20Kabupaten%20Lombok%20Timur%2C%20Nusa%20Tenggara%20Bar.!5e0!3m2!1sid!2sid!4v1642830715000!5m2!1sid!2sid"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <!-- Blog Wawasan -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <H2>WAWASAN</H2>
+                    </nav>
+                    <hr>
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <div class="col">
+                            <div class="card">
+                                <img src="image/berita1.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-title"> <a href="https://www.antaranews.com/berita/2655885/pelaku-pariwisata-di-lombok-timur-terima-hand-sanitizer-dan-thermogun"> Pelaku pariwisata di Lombok Timur terima hand sanitizer dan thermogun </a></h4>
+                                    <p class="card-text">Dinas pariwisata NTB membagikan hand sanitizer dan thermogun (pengukur suhu) kepada pelaku pariwisata di sembilan desa wisata di kabupaten Lombok Timur dalam rangka mempersiapkan peralatan MotoGP di Sirkuit Mandalika pada Maret 2022 mendatang.</p>
+                                <div class="text-muted">
+                                    <small>Kepala Dinas Pariwisata NTB</small>
+                                    <small>20 Januari 2022</small>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="image/berita2.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                     <h4 class="card-title"> <a href="https://travel.tempo.co/read/1552740/wisata-ke-desa-kesik-di-kabupaten-lombok-timur-ntb-yang-mirip-dengan-ubud-bali/full&view=ok"> Wisata ke Desa Kesik di Kabupaten Lombok Timur NTB yang Mirip dengan Ubud Bali </a></h4>
+                                    <p class="card-text">Desa Kesik di Kecamataan Masbagik, Kabupaten Lombok Timur, Nusa Tenggara Barat. Desa ini memiliki alam yang indah dengan sawah terasering seperti di Tegalalang, Ubud, Bali. Desa Kesik berada 40 kilometer arah timur dari Kota Mataram. Desa ini terletak di lembah Gunung Rinjani dengan ketinggian 345 meter di atas permukaan laut. Dari desa itu, wisatawan bisa menyaksikan perairan Selat Alas di sebelah timur Pulau Lombok.</p>
+                                    <div class="text-muted">
+                                        <small>Supriyantho Khafid</small>
+                                        <small>22 Januari 2022</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="image/berita3.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-title"> <a href="https://sport.tempo.co/read/1552278/pembenahan-sirkuit-dan-infrastruktur-motogp-mandalika-ditargetkan-usai-14-maret/full&view=ok"> MotoGP Mandalika, Daftar PR yang Harus Selesai Sebelum 14 Maret 2022 </a></h4>
+                                    <p class="card-text"> MotoGP Mandalika akan berlangsung pada 18 - 20 Maret 2022. Semua pihak berupaya menyambut ajang balap sepeda motor dunia itu dengan persiapan semaksimal mungkin. Komandan Lapangan MotoGP Mandalika 2022, Hadi Tjahjanto menyebutkan sejumlah pekerjaan rumah yang harus rampung jauh hari sebelum balapan tersebut dimulai. Dari sisi infrastruktur hingga pelayanan bagi para tamu VVIP selama perhelatan berlangsung.</p>
+                                    <div class="text-muted">
+                                        <small>Antara</small>
+                                        <small>22 Januari 2022</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="image/berita4.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-title"> <a href="https://sport.tempo.co/read/1552278/pembenahan-sirkuit-dan-infrastruktur-motogp-mandalika-ditargetkan-usai-14-maret/full&view=ok"> Lombok Timur Siap Sediakan 1.532 Kamar Tambahan Buat Penonton MotoGP </a></h4>
+                                    <p class="card-text">Yusron menyampaikan tujuan dari kunjungan tersebut adalah untuk memastikan kesiapan penginapan-penginapan yang ada di Kabupaten Lombok Timur, termasuk juga kesiapan atraksi seni-budaya dan produk ekonomi kreatif untuk menyambut MotoGP Mandalika mendatang. Dalam kunjungan tersebut, Kadispar Lombok Timur H. Mugni melaporkan, total ada 1.532 kamar yang tersedia di Kabupaten Lombok Timur.</p>
+                                    <div class="text-muted">
+                                        <small>Wahyu Setyo Widodo</small>
+                                        <small>21 Januari 2022</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>                
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="text-center">Kategori
+                                Berita Update</h3>
+                            <hr>
+                            <ul class="list-group">
+                                <div class="list-group-item dflex justify-content-between">
+                                    <h3>Objek Wisata</h3>
+                                    <div class="badgebadge-primary">
+                                        <div id="pilih">
+                                            <a class="ui-widget-content">Pelaku pariwisata di Lombok Timur terima hand sanitizer dan thermogun</a><br>
+                                            <a class="ui-widget-content">Wisata ke Desa Kesik di Kabupaten Lombok Timur NTB yang Mirip dengan Ubud Bali</a><br>
+                                            <a class="ui-widget-content">MotoGP Mandalika, Daftar PR yang Harus Selesai Sebelum 14 Maret 2022</a><br>
+                                            <a class="ui-widget-content">Lombok Timur Siap Sediakan 1.532 Kamar Tambahan Buat Penonton MotoGP</a>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- end blog -->
+    <!-- End Contact -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#003566" fill-opacity="1"
+            d="M0,64L34.3,74.7C68.6,85,137,107,206,144C274.3,181,343,235,411,224C480,213,549,139,617,133.3C685.7,128,754,192,823,202.7C891.4,213,960,171,1029,165.3C1097.1,160,1166,192,1234,176C1302.9,160,1371,96,1406,64L1440,32L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+        </path>
+    </svg>
+    <footer class="text-white text-center" style="background-color:#003566;">
+        <div class="container-fluid" style="background-color:#003566">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="">
+                    @2022 Created By Eka Pahmi Rozi
+                </div>
+                <div class="">
+                    <h4>Desain Website</h4>
+                    <p>Pelajari Suatu Hal Yang Menarik Dan Menantang Lalu Kembangkan</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
